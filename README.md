@@ -1,7 +1,16 @@
 # Slurm_sshd_scripts
 sshd scripts for slurm
 
+# Function
+This repository is used to apply for the GPU and use the sshd service to connect to the GPU.
 
+You can DIRECTLY use the sshd service to connect to the GPU without any other operations, typically, you can use the sshd service to connect to the GPU in the following situations:
+1. Debugging in the vscode
+2. Check the GPU status in the terminal
+3. Run the code in the terminal
+
+
+# Install
 ## clone the repository
 ```bash
 git clone XX XX
