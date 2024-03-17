@@ -38,3 +38,8 @@ cat Slurm-XXX.out
 
 
 IMPORTANT: This script preserves ONE GPU for 24 hours by default
+
+If you have any questions, please feel free to contact me.
+
+If you find this repository useful, please give me a star, thank you very much! 
+
