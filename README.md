@@ -9,7 +9,6 @@ You can DIRECTLY use the sshd service to connect to the GPU without any other op
 2. Check the GPU status in the terminal
 3. Run the code in the terminal
 
-
 # Install
 ## clone the repository
 ```bash
@@ -36,3 +35,6 @@ sbatch ~/sshd/sshd_job.sh
 squeue -u $USER
 cat Slurm-XXX.out
 ```
+
+
+IMPORTANT: This script preserves ONE GPU for 24 hours by default
