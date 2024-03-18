@@ -58,7 +58,7 @@ sbatch ~/sshd/sshd_job.sh
 
 ## check the ip_port of the sshd service
 ```
-squeue -u $USER
+squeue -u $USER | grep apply_gpu
 cat Slurm-XXX.out
 ```
 
