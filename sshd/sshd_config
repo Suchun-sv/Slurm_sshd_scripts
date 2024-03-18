@@ -123,4 +123,3 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 
 # Add your own user name
 AllowUsers root  YOUR_USER_NAME
-```
