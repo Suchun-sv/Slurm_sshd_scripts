@@ -10,6 +10,11 @@ You can DIRECTLY use the sshd service to connect to the GPU without any other op
 3. Run the code in the terminal
 
 # Install
+## generate the ssh key
+```bash
+ssh-keygen -t rsa -f ~/.ssh/vcg_cluster_user_sshd
+```
+
 ## clone the repository
 ```bash
 git clone XX XX
