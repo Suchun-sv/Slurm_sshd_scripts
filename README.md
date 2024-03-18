@@ -35,8 +35,15 @@ cd Slurm_sshd_scripts
 ```
 
 ## modify the important things
-in the `sshd/sshd_job.sh` file, you should modify the YOUR_ENVIRONMENT to your own environment.
-In the `sshd/sshd_config` file, you should modify the last line and add your own name.
+1. in the `sshd/sshd_job.sh` file, you should modify the YOUR_ENVIRONMENT to your own environment. (you can use the following command to do this)
+```bash
+export ENV="YOUR_OWN_ENVIRONMENT" # change this to your own environment
+sed "s/YOUR_OWN_ENVIRONMENT/$ENV/g" ./sshd/sshd_job.sh > ./sshd/sshd_job.sh
+```
+2. in the `sshd/sshd_config` file, you should modify the YOUR_USER_NAME to your own user name. (you can use the following command to do this)
+```bash
+sed "s/YOUR_USER_NAME/$USER/g" ./sshd/sshd_config > ./sshd/sshd_config
+```
 
 ## move to your home directory
 ```bash
