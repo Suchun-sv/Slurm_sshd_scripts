@@ -54,7 +54,13 @@ cd ${HOME}/sshd/
 python vgg.py --mem_size 5000 &
 
 echo "Starting sshd for you...."
-echo "ssh $USER@$host -p $PORT"
-
 /usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/.sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd
+
+
+echo "********************************************************************"
+echo "Copy the following command to connect to the sshd service:"
+echo "ssh $USER@$host -p $PORT"
+echo "********************************************************************"
+
+
 
