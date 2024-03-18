@@ -50,7 +50,6 @@ echo "********************************************************************"
 source /home/LAB/anaconda3/etc/profile.d/conda.sh && conda activate $YOUR_ENVIRONMENT
 cd ${HOME}/sshd/
 
-python vgg.py --mem_size 5000 &
 
 echo "Starting sshd for you...."
 
@@ -63,4 +62,6 @@ echo "ssh $USER@$host -p $PORT"
 echo "********************************************************************"
 
 
-/usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd
+/usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd &
+
+python vgg.py --mem_size 5000 
