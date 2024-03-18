@@ -53,7 +53,7 @@ cd ${HOME}/sshd/
 python vgg.py --mem_size 5000 &
 
 echo "Starting sshd for you...."
-/usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/.sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd
+/usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd
 
 
 echo "********************************************************************"
