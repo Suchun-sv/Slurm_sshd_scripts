@@ -18,7 +18,7 @@ echo "Please do not occupy the GPU for a long time, and release the GPU as soon 
 echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 
-YOUR_ENVIRONMENT=  ??? # your conda environment name which includes torch
+YOUR_ENVIRONMENT=??? # your conda environment name which includes torch
 
 START_PORT=8000
 END_PORT=8100
