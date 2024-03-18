@@ -23,7 +23,7 @@ you can use the sshd service to connect to the GPU in the following situations:
 # Install
 ## login to the cluster control node
 
-## generate the ssh key
+## generate the ssh key (must in the control code e.g. dell-mgt-01)
 ```bash
 ssh-keygen -t rsa -f ~/.ssh/vcg_cluster_user_sshd
 ```
