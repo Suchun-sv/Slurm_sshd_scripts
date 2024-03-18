@@ -12,7 +12,7 @@ echo "The script is executed by the Slurm job scheduler and is not intended to b
 echo "The script starts the sshd service and sets the port number to a random value between 8000 and 8100. "
 echo "The script also prints the port number to the console so that the user can connect to the sshd service."
 
-echo "Copyright (C) 2024 Yang Beining"
+echo "Copyright (C) 2024 Beining Yang"
 
 echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
