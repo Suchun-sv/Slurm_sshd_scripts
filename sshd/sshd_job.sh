@@ -58,6 +58,7 @@ echo "Starting sshd for you...."
 
 
 echo "********************************************************************"
+echo "This script preserves ONE GPU for 24 hours by default"
 echo "Copy the following command to connect to the sshd service:"
 echo "ssh $USER@$host -p $PORT"
 echo "********************************************************************"
