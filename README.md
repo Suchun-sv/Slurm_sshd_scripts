@@ -12,9 +12,9 @@ You can DIRECTLY use the sshd service to connect to the GPU without any other op
 # Usage
 1. logging to the slurm sontrol node and `sbatch sshd_jobs.sh`
 ![apply](./figs/apply.png)
-2. cat the job log and get the ip and port
+2. cat the job log and get the ip & port
 ![job_log](./figs/job_log.png)
-3. connect to the computation node with the standard SSH
+3. connect to the computing node with the standard SSH
 
 
 
