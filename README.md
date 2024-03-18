@@ -2,15 +2,17 @@
 sshd scripts for slurm
 
 # Function
-This repository is used to apply for the GPU and use the sshd service to connect to the GPU.
+This repository is used to apply for the GPU and start a sshd service to connect to the GPU.
 
-You can DIRECTLY use the sshd service to connect to the GPU without any other operations, typically, you can use the sshd service to connect to the GPU in the following situations:
+You can DIRECTLY use the `ssh` to connect to the GPU without any other operations.
+
+you can use the sshd service to connect to the GPU in the following situations:
 1. Debugging in the vscode
 2. Check the GPU status in the terminal
 3. Run the code in the terminal
 
 # Usage
-1. logging to the slurm sontrol node and `sbatch sshd_jobs.sh`
+1. logging into the slurm sontrol node and `sbatch sshd_jobs.sh`
 ![apply](./figs/apply.png)
 2. view the job log and get the ip & port
 ![job_log](./figs/job_log.png)
@@ -19,7 +21,7 @@ You can DIRECTLY use the sshd service to connect to the GPU without any other op
 
 
 # Install
-## login the cluster control node
+## login to the cluster control node
 
 ## generate the ssh key
 ```bash
