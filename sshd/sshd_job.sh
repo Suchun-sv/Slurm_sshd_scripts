@@ -14,9 +14,9 @@ echo "The script also prints the port number to the console so that the user can
 
 echo "Copyright (C) 2024 Beining Yang"
 
-echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
-echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
-echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
+echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
+echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
+echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 
 YOUR_ENVIRONMENT=  ??? # your conda environment name which includes torch
 
