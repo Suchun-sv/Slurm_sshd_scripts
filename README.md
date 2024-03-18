@@ -29,7 +29,8 @@ In the `sshd_config` file, you should modify the last line and add your own name
 
 ## move to your home directory
 ```bash
-mv sshd/ ~/
+# mv sshd/ ~/
+ln -s ${pwd}/sshd/ ~/
 ```
 
 ## apply for the GPU
