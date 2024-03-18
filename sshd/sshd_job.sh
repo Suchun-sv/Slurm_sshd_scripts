@@ -6,19 +6,18 @@
  
 #PORT=$(python -c 'import socket; s=socket.socket(); s.bind(("", 0)); print(s.getsockname()[1]); s.close()')
 
-"""
-This file is a helper script for the sshd service. It is used to start the sshd service in a Slurm job. 
-The script is executed by the Slurm job scheduler and is not intended to be run manually. 
-The script starts the sshd service and sets the port number to a random value between 8000 and 8100. 
-The script also prints the port number to the console so that the user can connect to the sshd service.
+# echo following line
+echo "This file is a helper script for the sshd service. It is used to start the sshd service in a Slurm job. "
+echo "The script is executed by the Slurm job scheduler and is not intended to be run manually. "
+echo "The script starts the sshd service and sets the port number to a random value between 8000 and 8100. "
+echo "The script also prints the port number to the console so that the user can connect to the sshd service."
 
-Copyright (C) 2024 Yang Beining
+echo "Copyright (C) 2024 Yang Beining"
 
-Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!
-Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!
-Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!
+echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
+echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
+echo "Please not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 
-"""
 
 YOUR_ENVIRONMENT=  ??? # your conda environment name which includes torch
 
