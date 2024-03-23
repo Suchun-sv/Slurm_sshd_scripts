@@ -48,7 +48,13 @@ export ENV="YOUR_OWN_ENVIRONMENT" # change this to your own environment
 cp ./sshd/sshd_job.sh ./sshd/sshd_job.sh.bak
 sed "s/YOUR_OWN_ENVIRONMENT/$ENV/g" ./sshd/sshd_job.sh.bak > ./sshd/sshd_job.sh
 ```
-2. in the `sshd/sshd_config` file, you should modify the YOUR_USER_NAME to your own user name. (you can use the following command to do this)
+2. in the `sshd/sshd_job.sh` file, you should change the `YOUR_PYTHON` to your own python path. (you can use the following command to do this)
+```bash
+YOUR_PYTHON=$(export PYTHONNOUSERSITE=1 && conda activate $ENV && which python)
+cp ./sshd/sshd_job.sh ./sshd/sshd_job.sh.bak
+sed "s|YOUR_PYTHON=python|YOUR_PYTHON=$YOUR_PYTHON|g" ./sshd/sshd_job.sh.bak > ./sshd/sshd_job.sh
+```
+3. in the `sshd/sshd_config` file, you should modify the YOUR_USER_NAME to your own user name. (you can use the following command to do this)
 ```bash
 cp ./sshd/sshd_config ./sshd/sshd_config.bak
 sed "s/YOUR_USER_NAME/$USER/g" ./sshd/sshd_config.bak > ./sshd/sshd_config
