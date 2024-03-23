@@ -82,12 +82,23 @@ fi
 
 include_config="Include ${HOME}/sshd/gpu_ssh.conf"
 ssh_config_file=~/.ssh/config
-echo "Include the following configuration in your ~/.ssh/config file:"
-if ! grep -qF "$include_config" "$ssh_config_file"; then
-    echo "$include_config" >> "$ssh_config_file"
-    echo "Configuration added to ~/.ssh/config."
-else
-    echo "Configuration already exists in ~/.ssh/config."
+echo -n "Do you want to include the configuration in your ~/.ssh/config file? [y/n]"
+read confirm
+if [[ $confirm == [yY]* ]]; then
+    if ! grep -qF "$include_config" "$ssh_config_file"; then
+        cp ~/.ssh/config ~/.ssh/config.slurm.bak
+        touch ~/.ssh/tmp
+        echo "$include_config" >> ~/.ssh/tmp
+        cat ~/.ssh/config.slurm.bak >> ~/.ssh/tmp
+        mv ~/.ssh/tmp ~/.ssh/config.slurm.bak
+        echo "Now you can check the configuration in ~/.ssh/config.slurm.bak. and rename it to ~/.ssh/config."
+        echo ""
+        echo ""
+        echo "if you think everything is fine, you can run the following command:"
+        echo "cp ~/.ssh/config.slurm.bak ~/.ssh/config"
+    else
+        echo "Configuration already exists in ~/.ssh/config."
+    fi
 fi
 
 echo "The sshd script is all set up. You can now run the following command to apply for the sshd service:"
