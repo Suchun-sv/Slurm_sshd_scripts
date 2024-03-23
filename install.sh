@@ -58,9 +58,23 @@ else
     fi
 fi
 
+alias_to_add="alias apply_gpu='sbatch ~/sshd/sshd_job.sh'"
+
+bashrc_file=~/.bashrc
+
+if ! grep -qF "$alias_to_add" "$bashrc_file"; then
+    echo "$alias_to_add" >> "$bashrc_file"
+    echo "Alias added to ~/.bashrc."
+else
+    echo "Alias already exists in ~/.bashrc."
+fi
+
+
 echo "The sshd script is all set up. You can now run the following command to apply for the sshd service:"
 echo "===================================================================================================="
 echo "sbatch ~/sshd/sshd_job.sh"
+echo "or you can use the alias: apply_gpu"
 echo "===================================================================================================="
+
 
 echo "You can reset the settings by re-running this script."
