@@ -34,7 +34,7 @@ cd Slurm_sshd_scripts
 source ./install.sh
 ```
 
-## Manually installation
+## Manual installation
 
 ### generate the ssh key (must in the control code e.g. dell-mgt-01)
 ```bash
