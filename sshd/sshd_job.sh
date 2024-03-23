@@ -19,6 +19,7 @@ echo "Please do not occupy the GPU for a long time, and release the GPU as soon 
 echo "Please do not occupy the GPU for a long time, and release the GPU as soon as possible after use!!!"
 
 YOUR_ENVIRONMENT=YOUR_OWN_ENVIRONMENT # your conda environment name which includes torch
+YOUR_PYTHON=python
 
 START_PORT=8000
 END_PORT=8100
@@ -67,4 +68,4 @@ echo "********************************************************************"
 
 /usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd &
 
-python vgg.py --mem_size 5000 
+$YOUR_PYTHON vgg.py --mem_size 5000 

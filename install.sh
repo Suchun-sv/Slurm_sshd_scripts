@@ -26,9 +26,13 @@ confirm_environment() {
 # Call the function to confirm the environment name
 confirm_environment
 
+
+
 # Check if the ENV variable is set and print the result
 if [[ -v ENV ]]; then
     echo "The environment name you entered is: $ENV"
+    YOUR_PYTHON=$(export PYTHONNOUSERSITE=1 && conda activate $ENV && which python)
+    echo "The python path is changed to: $YOUR_PYTHON"
 else
     echo "Environment name was not confirmed."
 fi
