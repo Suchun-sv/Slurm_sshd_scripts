@@ -80,6 +80,15 @@ else
     echo "Alias already exists in ~/.bashrc."
 fi
 
+include_config = "Include ${HOME}/sshd/gpu_ssh.conf"
+ssh_config_file=~/.ssh/config
+echo "Include the following configuration in your ~/.ssh/config file:"
+if ! grep -qF "$include_config" "$ssh_config_file"; then
+    echo "$include_config" >> "$ssh_config_file"
+    echo "Configuration added to ~/.ssh/config."
+else
+    echo "Configuration already exists in ~/.ssh/config."
+fi
 
 echo "The sshd script is all set up. You can now run the following command to apply for the sshd service:"
 echo "===================================================================================================="

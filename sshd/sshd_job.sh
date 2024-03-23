@@ -64,6 +64,11 @@ echo "\n\n"
 echo "ssh $USER@$host -p $PORT"
 echo "********************************************************************"
 
+echo "Host slurm_gpu
+    HostName $host
+    User $USER
+    Port $PORT
+    IdentityFile ~/.ssh/id_rsa" >> ./gpu_ssh.config
 
 /usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd &
 
