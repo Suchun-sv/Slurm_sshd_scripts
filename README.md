@@ -23,18 +23,25 @@ you can use the sshd service to connect to the GPU in the following situations:
 # Install
 ## login to the cluster control node
 
-## generate the ssh key (must in the control code e.g. dell-mgt-01)
-```bash
-ssh-keygen -t rsa -f ~/.ssh/vcg_cluster_user_sshd
-```
-
 ## clone the repository
 ```bash
 git clone XX XX
 cd Slurm_sshd_scripts
 ```
 
-## modify the important things
+## Automatic installation
+```
+source ./install.sh
+```
+
+## Manually installation
+
+### generate the ssh key (must in the control code e.g. dell-mgt-01)
+```bash
+ssh-keygen -t rsa -f ~/.ssh/vcg_cluster_user_sshd
+```
+
+### modify the important things
 1. in the `sshd/sshd_job.sh` file, you should modify the YOUR_ENVIRONMENT to your own environment. (you can use the following command to do this)
 ```bash
 export ENV="YOUR_OWN_ENVIRONMENT" # change this to your own environment
@@ -47,7 +54,7 @@ cp ./sshd/sshd_config ./sshd/sshd_config.bak
 sed "s/YOUR_USER_NAME/$USER/g" ./sshd/sshd_config.bak > ./sshd/sshd_config
 ```
 
-## move to your home directory
+### move to your home directory
 ```bash
 # mv sshd/ ~/
 ln -s $(pwd)/sshd/ ~/

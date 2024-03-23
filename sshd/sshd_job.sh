@@ -47,7 +47,10 @@ echo "Path:" $(pwd)
 echo "Listening on:" $PORT
 echo "********************************************************************" 
 
-source /home/LAB/anaconda3/etc/profile.d/conda.sh && conda activate $YOUR_ENVIRONMENT
+# source /home/LAB/anaconda3/etc/profile.d/conda.sh
+export PYTHONNOUSERSITE=1
+source ~/.bashrc
+conda activate $YOUR_ENVIRONMENT
 cd ${HOME}/sshd/
 
 
