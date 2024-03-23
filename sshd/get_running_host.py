@@ -36,5 +36,10 @@ else:
             f.write(config_str)
     print("saved to ~/sshd/gpu_ssh.conf, try connect by you own.")
 
+    with open(os.path.expanduser("~")+"/sshd/running_ports.conf", "w") as f:
+        for i, host_config in enumerate(running_hosts):
+            f.write(f"export user={host_config['user']} && export host={host_config['host']} && export port={host_config['port']}\n")
+    print("saved to ~/sshd/running_ports.conf")
+
                 
                 
