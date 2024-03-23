@@ -37,10 +37,11 @@ else
     echo "Environment name was not confirmed."
 fi
 
-
-
 cp ./sshd/sshd_job.sh ./sshd/sshd_job.sh.bak
 sed "s/YOUR_OWN_ENVIRONMENT/$ENV/g" ./sshd/sshd_job.sh.bak > ./sshd/sshd_job.sh
+
+cp ./sshd/sshd_job.sh ./sshd/sshd_job.sh.bak
+sed "s/YOUR_PYTHON=python/YOUR_PYTHON=$YOUR_PYTHON/g" ./sshd/sshd_job.sh.bak > ./sshd/sshd_job.sh
 
 cp ./sshd/sshd_config ./sshd/sshd_config.bak
 sed "s/YOUR_USER_NAME/$USER/g" ./sshd/sshd_config.bak > ./sshd/sshd_config
