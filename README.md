@@ -50,7 +50,7 @@ sed "s/YOUR_USER_NAME/$USER/g" ./sshd/sshd_config.bak > ./sshd/sshd_config
 ## move to your home directory
 ```bash
 # mv sshd/ ~/
-ln -s ${pwd}/sshd/ ~/
+ln -s $(pwd)/sshd/ ~/
 ```
 
 ## apply for the GPU
