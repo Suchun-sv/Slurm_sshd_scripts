@@ -32,7 +32,13 @@ confirm_environment
 if [[ -v ENV ]]; then
     echo "The environment name you entered is: $ENV"
     YOUR_PYTHON=$(export PYTHONNOUSERSITE=1 && conda activate $ENV && which python)
-    echo "The python path is changed to: $YOUR_PYTHON"
+    # 如果为空，报错并退出
+    if [ -z "$YOUR_PYTHON" ]; then
+        echo "The python path is not found. Please check the environment name."
+        exit 1
+    else
+        echo "The python path is changed to: $YOUR_PYTHON"
+    fi
 else
     echo "Environment name was not confirmed."
 fi
