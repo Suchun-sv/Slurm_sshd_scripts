@@ -80,7 +80,7 @@ else
     echo "Alias already exists in ~/.bashrc."
 fi
 
-include_config = "Include ${HOME}/sshd/gpu_ssh.conf"
+include_config="Include ${HOME}/sshd/gpu_ssh.conf"
 ssh_config_file=~/.ssh/config
 echo "Include the following configuration in your ~/.ssh/config file:"
 if ! grep -qF "$include_config" "$ssh_config_file"; then
