@@ -49,9 +49,9 @@ echo "Listening on:" $PORT
 echo "********************************************************************" 
 
 # source /home/LAB/anaconda3/etc/profile.d/conda.sh
-export PYTHONNOUSERSITE=1
-source ~/.bashrc
-conda activate $YOUR_ENVIRONMENT
+# export PYTHONNOUSERSITE=1
+# source ~/.bashrc
+# conda activate $YOUR_ENVIRONMENT
 cd ${HOME}/sshd/
 
 
@@ -59,7 +59,6 @@ echo "Starting sshd for you...."
 
 
 echo "********************************************************************"
-echo "This script preserves ONE GPU for 24 hours by default"
 echo "Copy the following command to connect to the sshd service:"
 echo "\n\n"
 echo "ssh $USER@$host -p $PORT"
@@ -68,4 +67,10 @@ echo "********************************************************************"
 
 /usr/sbin/sshd -D -p ${PORT} -f ${HOME}/sshd/sshd_config -h ${HOME}/.ssh/vcg_cluster_user_sshd &
 
-$YOUR_PYTHON vgg.py --mem_size 5000 
+if [[ -n "$SLURM_JOBID" ]]; then
+    echo "This script is running under sbatch."
+    $YOUR_PYTHON vgg.py --mem_size 5000 
+    echo "This script preserves ONE GPU for 24 hours by default"
+else
+    echo "You are running in your bash."
+fi
