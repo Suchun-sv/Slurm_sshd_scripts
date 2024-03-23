@@ -9,7 +9,7 @@ confirm_environment() {
 
     # Ask the user to confirm the environment name
     echo -n "Please confirm the environment name 【$env_name】[y/n]: "
-    read -n confirm
+    read confirm
 
     # Check the user's confirmation
     if [[ $confirm == [yY]* ]]; then
@@ -50,7 +50,8 @@ fi
 if [ ! -d ~/sshd ]; then
     ln -s $(pwd)/sshd ~/sshd
 else 
-    echo "The sshd directory already exists. Do you want to reset the settings? [y/n]"
+    echo -n "The sshd directory already exists. Do you want to reset the settings? [y/n]"
+    read confirm
     if [[ $confirm == [yY]* ]]; then
         rm -r ~/sshd
         ln -s $(pwd)/sshd ~/sshd
