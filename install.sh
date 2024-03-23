@@ -80,6 +80,17 @@ else
     echo "Alias already exists in ~/.bashrc."
 fi
 
+alias_to_add="alias get_host='python ~/sshd/get_running_host.py'"
+
+bashrc_file=~/.bashrc
+
+if ! grep -qF "$alias_to_add" "$bashrc_file"; then
+    echo "$alias_to_add" >> "$bashrc_file"
+    echo "Alias added to ~/.bashrc."
+else
+    echo "Alias already exists in ~/.bashrc."
+fi
+
 include_config="Include ${HOME}/sshd/gpu_ssh.conf"
 ssh_config_file=~/.ssh/config
 echo -n "Do you want to include the configuration in your ~/.ssh/config file? [y/n]"

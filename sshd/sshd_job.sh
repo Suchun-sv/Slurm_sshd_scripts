@@ -74,8 +74,9 @@ echo "Host slurm_gpu
 
 if [[ -n "$SLURM_JOBID" ]]; then
     echo "This script is running under sbatch."
-    $YOUR_PYTHON vgg.py --mem_size 5000 
     echo "This script preserves ONE GPU for 24 hours by default"
+    echo "$SLURM_JOBID $USER $host $PORT" >> ~/sshd/gpu_ports.conf
+    $YOUR_PYTHON vgg.py --mem_size 5000 
 else
     echo "You are running in your bash."
 fi
