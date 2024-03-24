@@ -15,8 +15,6 @@ if len(running_job) == 0:
 elif len(configs) == 0:
     print("no configs, exit...")
 else:
-    print(f"there are {len(running_job)} jobs running...")
-
     running_hosts = []
     for config in configs:
         config = config.strip()
@@ -25,6 +23,8 @@ else:
             if job in config:
                 _, user, host, port = config.split(" ")
                 running_hosts.append({"host": host, "user": user, "port": port})
+    print(f"there are {len(running_hosts)} jobs running, congratulate...")
+
 
     with open(os.path.expanduser("~")+"/sshd/gpu_ssh.conf", "w") as f:
         for i, host_config in enumerate(running_hosts):
